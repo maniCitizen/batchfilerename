@@ -23,6 +23,13 @@ else
     FINAL_DIRECTORY="${DIRECTORY_NAME}"
 fi
 
+#Check if the script is executed in the current directory
+if [[ "${DIRECTORY_NAME}" == "${CURRENT_DIRECTORY}" ]]
+then
+    echo "It is advised to place this script somewhere else and Run !!!"
+    exit 1
+fi
+
 #Check if File Name is provided or not.
 if [[ -z "${REQUIRED_FILE_NAME}" ]]
 then
